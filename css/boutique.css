@@ -1,0 +1,152 @@
+@media (max-width: 1024px) {
+    .produit {
+      flex: 1 1 calc(33.33% - 40px); /* 3 par ligne */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .produit {
+      flex: 1 1 calc(50% - 40px); /* 2 par ligne */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .produit {
+      flex: 1 1 100%; /* 1 par ligne */
+    }
+  }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('https://images.unsplash.com/photo-1552872673-9b7b54b8f40a');
+    background-size: cover;
+    background-attachment: fixed;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar li {
+    margin: 0 20px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .navbar a:hover {
+    background: cyan;
+    color: #000;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .boutique {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .produit {
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .produit:hover {
+    transform: translateY(-5px);
+  }
+
+  .produit img {
+    width: 100%;
+    height: 140px;
+    background: #ccc;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .produit h2 {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .produit p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .acheter {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .acheter:hover {
+    background-color: #218838;
+  }
+
+  .content {
+    padding: 50px;
+    animation: slideUp 1.5s ease;
+  }
+
+  .box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
