@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <link rel="shortcut icon" href="img/icon/icon.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Contact</title> 
+  <script>
+    function envoyerEmail() {
+      const nom = document.getElementById("nom").value;
+      const email = document.getElementById("email").value;
+      const motif = document.getElementById("motif").value;
+      const message = document.getElementById("message").value;
+
+      const sujet = encodeURIComponent("Contact : " + motif);
+      const corps = encodeURIComponent(
+        "Nom : " + nom + "\n" +
+        "Email : " + email + "\n" +
+        "Motif : " + motif + "\n\n" +
+        message
+      );
+
+      // Remplacez par votre adresse email
+      const mailto = `mailto:votre@email.com?subject=${sujet}&body=${corps}`;
+      window.location.href = mailto;
+    }
+  </script>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+ 
+</head>
+<body>
+    <header>
+        <h1>Contactez-nous</h1>
+  <form onsubmit="event.preventDefault(); envoyerEmail();">
+    <label for="nom">Nom :</label><br>
+    <input type="text" id="nom" required><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label for="motif">Motif :</label><br>
+    <select id="motif" required>
+      <option value="Demande d'information">Demande d'information</option>
+      <option value="Support technique">Support technique</option>
+      <option value="Devis">Demande de devis</option>
+      <option value="Autre">Autre</option>
+    </select><br><br>
+
+    <label for="message">Message :</label><br>
+    <textarea id="message" rows="6" required></textarea><br><br>
+
+    <button type="submit">Envoyer</button>
+  </form>
+    </header>
+</body>
+</html>
